@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block form_content%}
+
+<form class = "pl-3" method="post" enctype="multipart/form-data">
+    <h1 class="display-5 pl-3">
+        Fill Employee Form
+    </h1>
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="col-sm-4 my-1">
+            <label for="formGroupExampleInput">Enter Full Name</label>
+            {{ form.name}}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-4 my-1">
+            <label for="formGroupExampleInput">Enter Designation</label>
+            {{ form.designation}}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-8 my-1">
+            <label for="formGroupExampleInput">Enter Bio</label>
+            {{ form.bio}}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-8 my-1">
+            <label for="formGroupExampleInput">Enter Skills</label>
+            {{ form.skills}}
+        </div>
+    </div>
+    <div class="custom-file pl-3">
+        <div class="col-sm-8 my-1">
+            <label class="custom-file-label" for="validatedCustomFile">Upload Image...</label>
+                {{form.upload_image}} 
+        </div>
+    </div>  
+    <div class="pl-3 pt-3">
+        <button type="submit" class="btn btn-secondary">Submit</button>
+    </div>  
+    
+</form>
+  {% if img_obj %}  
+    <h3>Succesfully uploaded : {{image.caption}}</h3>  
+    <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">  
+  {% endif %} 
+  <div class="pl-4 pt-3">
+    <button type="button" class="btn-lg btn-primary">Add New Form</button>
+</div>
+{% endblock form_content%}

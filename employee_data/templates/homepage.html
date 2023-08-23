@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block form_content%}
+<h1> &nbsp Employees</h1>
+<div class="row">
+{% for employee in employees %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" style="max-width:300px;height:auto;" " src="{{ employee.upload_image.url }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ employee.name }}</h5>
+                <h3 class="card-text">{{ employee.designation }}</h3>
+                <h5 class="card-text">Skills</h5>
+                <p class="card-text">{{ employee.skills}}</p>
+                <a href="{% url 'employee' employee.id %}"
+                   class="btn btn-secondary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock form_content%}
