@@ -9,6 +9,5 @@ class Employee(models.Model):
     designation = models.CharField(max_length=100)
     bio = models.TextField()
     skills = models.TextField()
-    # image = models.FilePathField(path="employee_data/images")
-    # upload_image = models.ImageField(upload_to=get_image_path, blank=True)   #specifies the subdirectory in uploads folder where the uploads will be saved 
+  
     
