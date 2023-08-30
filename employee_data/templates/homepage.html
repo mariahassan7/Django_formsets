@@ -6,7 +6,7 @@
 {% for employee in employees %}
     <div class="col-md-4">
         <div class="card mb-2">
-            <img class="card-img-top" style="max-width:300px;height:auto;" " src="{{ employee.upload_image.url }}">
+            {% comment %} <img class="card-img-top" style="max-width:300px;height:auto;" " src="{{ employee.upload_image.url }}"> {% endcomment %}
             <div class="card-body">
                 <h5 class="card-title">{{ employee.name }}</h5>
                 <h3 class="card-text">{{ employee.designation }}</h3>
